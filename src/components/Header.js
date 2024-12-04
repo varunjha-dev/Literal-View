@@ -18,7 +18,7 @@ const Header = () => {
       });
   };
   useEffect(() => {
-    onAuthStateChanged(auth, (user) => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
          // User is signed in, see docs for a list of available properties
          
@@ -38,6 +38,9 @@ const Header = () => {
         navigate("/");
       }
     });
+     // Unsiubscribe when component unmounts
+     return () => unsubscribe();
+
   },[]); 
   //*Empty array means "run once, after the initial render."
 
@@ -49,7 +52,7 @@ const Header = () => {
       />
       {user && (
         <div className="flex p-2">
-          <img className="w-12 h-12 rounded" alt="usericon" src={user?.photoURL} />
+          <img className="w-12 h-12 rounded-full" alt="usericon" src={user?.photoURL} />
           <button onClick={handleSignOut} className="font-bold text-white ">
             Sign Out
           </button>

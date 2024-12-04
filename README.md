@@ -3,7 +3,18 @@
 - Configured TailwindCSS
 - Header 
 - Login Form
-- signup form
+- Routing of App
+- Routing of App
+- Form Validation
+- useRef Hook
+- Firebase Setup
+- Deploying our app to production
+- Create SignUp User Account
+- Implement Sign In user Api
+- Created Redux Store with userSlice
+- Implemented Sign out 
+- Update Profile
+- will Fetch Movie card from Tmdb
 
 
 

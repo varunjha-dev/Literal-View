@@ -1,6 +1,6 @@
 import model from "../utils/genai";
 import { useRef } from "react";
-import { useSelector,useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import lang from "../utils/languageConstants";
 import { API_OPTIONS } from "../utils/constants";
 import { addGptMovieResult } from "../utils/gptSlice";
@@ -36,27 +36,32 @@ const GptSearchBar = () => {
       const promiseArray = movieNames.map((movie) => searchMovieTMDB(movie));
       const tmdbResults = await Promise.all(promiseArray);
       console.log(tmdbResults);
-      dispatch( addGptMovieResult({ movieNames: movieNames, movieResults: tmdbResults }) );
+      dispatch(
+        addGptMovieResult({ movieNames: movieNames, movieResults: tmdbResults })
+      );
     } catch (error) {
       console.error("Error fetching movie recommendations:", error);
     }
   };
   return (
-    <div className="pt-[10%] flex justify-center">
+    <div className="pt-[35%] md:pt-[10%] flex justify-center px-4 sm:px-8">
+      
       <form
-        className="w-2/3 bg-gradient-to-r from-gray-700 via-gray-900 to-black rounded-lg shadow-lg grid grid-cols-12"
+        className="w-full md:w-1/2 bg-gradient-to-r from-gray-700 via-gray-900 to-black rounded-lg shadow-lg grid grid-cols-12"
         onSubmit={(e) => e.preventDefault()}
       >
+        
         <input
           ref={searchText}
           type="text"
-          className="p-4 m-4 col-span-9 bg-gray-100 text-black rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-500"
+          className="p-2 m-2 col-span-12 sm:col-span-9 bg-gray-100 text-black rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-500"
           placeholder={lang[langKey].gptSearchPlaceholder}
         />
         <button
-          className="col-span-3 m-4 py-2 px-4 bg-red-700 text-white rounded-lg hover:bg-red-800 transition duration-300 ease-in-out"
+          className="col-span-12 sm:col-span-3 m-2 py-2 px-4 bg-red-700 text-white rounded-lg hover:bg-red-800 transition duration-300 ease-in-out"
           onClick={handleGptSearchClick}
         >
+          
           {lang[langKey].search}
         </button>
       </form>

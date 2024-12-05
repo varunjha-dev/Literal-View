@@ -85,17 +85,17 @@ const Login = () => {
       <div className="absolute inset-0 bg-cover bg-center">
         <img className = "w-screen h-screen object-cover"
           src= {BG_URL}
-          alt="logo"
+          alt="BG"
         />
       </div>
       <form
         onSubmit={(e) => e.preventDefault()}
-        className="w-3/12 absolute p-12 bg-black my-36 mx-auto right-0 left-0 text-white rounded-lg bg-opacity-80"
+        className="w-full md:w-3/12 absolute p-12 bg-black my-36 mx-auto right-0 left-0 text-white rounded-lg bg-opacity-80"
       >
         <h3 className="font-bold text-1xl py-0">
           Literal View
         </h3>
-        <h1 className="font-bold text-3xl py-4">
+        <h1 className="font-bold text-3xl py-4" onClick={toggleSignInForm}>
           {isSignInForm ? "Sign In" : "Sign Up"}
         </h1>
 

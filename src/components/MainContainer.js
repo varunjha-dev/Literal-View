@@ -9,7 +9,6 @@ const MainContainer = () => {
 
   const mainMovie = movies[0];
 // taking into account that first movies plays 
-// console.log(mainMovie);
   const { original_title, overview, id } = mainMovie;
 
   return (

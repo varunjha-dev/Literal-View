@@ -78,7 +78,7 @@ const Header = () => {
             className="bg-gradient-to-r from-red-400 to-pink-800 text-white py-1 px-3 text-lg rounded-full shadow-md transition duration-300 transform hover:scale-105 hover:shadow-lg"
             onClick={handleGptSearchClick}
           >
-            {showGptSearch ? "Homepage" : "GPT Search"}
+            {showGptSearch ? "Homepage" : "Gemini"}
           </button>
           <img className="w-12 h-12 rounded-full" alt="usericon" src={user?.photoURL} />
           <button onClick={handleSignOut} className="bg-gradient-to-r from-pink-800 to-pink-950 text-white py-1 px-3 text-lg rounded-full shadow-md transition duration-300 transform hover:scale-105 hover:shadow-lg ">

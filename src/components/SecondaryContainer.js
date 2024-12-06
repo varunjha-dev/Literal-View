@@ -5,6 +5,7 @@ import useMoviesByCategories from "../hooks/useMoviesByCategories";
 
 const SecondaryContainer = () => {
   useMovieCategories();  // Fetch categories from the API
+  useMoviesByCategories();
   const categories = useSelector((store) => store.movies.movieCategories);  // Get categories from Redux
   const moviesByCategory = useMoviesByCategories();  // Get movies for each category from the hook
 

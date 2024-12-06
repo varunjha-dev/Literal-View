@@ -8,10 +8,11 @@ import useMovieCategories from "../hooks/useMovieCategories";  // Fetch movie ca
 import useMoviesByCategories from "../hooks/useMoviesByCategories";
 
 const Browse = () => {
+  useMoviesByCategories();
   // Calling hooks to fetch data and populate the Redux store
   useNowPlayingMovies(); 
   useMovieCategories();  // Fetch movie categories
-  useMoviesByCategories();
+  
   
   const showGptSearch = useSelector((store) => store.gpt.showGptSearch);
 

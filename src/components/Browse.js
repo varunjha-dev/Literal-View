@@ -4,15 +4,12 @@ import SecondaryContainer from "./SecondaryContainer";
 import GptSearch from "./GptSearch";
 import { useSelector } from "react-redux";
 import useNowPlayingMovies from '../hooks/useNowPlayingMovies';  // Fetch now playing movies
-import usePopularMovies from "../hooks/usePopularMovies";  // Fetch popular movies
 import useMovieCategories from "../hooks/useMovieCategories";  // Fetch movie categories
 import useMoviesByCategories from "../hooks/useMoviesByCategories";
 
 const Browse = () => {
   // Calling hooks to fetch data and populate the Redux store
   useNowPlayingMovies(); 
-  usePopularMovies(); 
- 
   useMovieCategories();  // Fetch movie categories
   useMoviesByCategories();
   

@@ -72,6 +72,18 @@ Literal-View is a modern web application built using React, TailwindCSS, and Fir
 - **Added .env file to .gitignore**: Ensured sensitive data is not exposed in version control.
 - **Responsiveness to some extent**: Enhanced the app’s responsiveness.
 
+### New Features
+
+#### Dynamic Update of Main Container
+- **Dynamic Trailer and Video Title**: 
+  - The main container dynamically updates the trailer and video title on every refresh.
+  - A new random trailer is played from the "Now Playing" movies list.
+
+#### Increased Movie Categories
+- **Expanded Movie Categories**:
+  - Increased the number of movie categories.
+  - Populated the app with movies categorized by these new categories.
+
 ## Features
 
 ### Authentication

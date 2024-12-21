@@ -18,8 +18,8 @@ const MovieList = ({ title, movies }) => {
           {movies?.map((movie) => (
             <MovieCard
               key={movie.id}
-              posterPath={movie.poster_path} // Movie poster path
-              originalTitle={movie.original_title} // Movie title for opening a new tab
+              posterPath={movie.poster_path}
+              originalTitle={movie.original_title} 
             />
           ))}
         </div>

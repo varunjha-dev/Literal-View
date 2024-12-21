@@ -9,18 +9,18 @@ const useMovieCategories = () => {
 
   const getMovieCategories = async () => {
     const data = await fetch(
-      "https://api.themoviedb.org/3/genre/movie/list",  // Fetch movie categories
+      "https://api.themoviedb.org/3/genre/movie/list",  
       API_OPTIONS
     );
     const json = await data.json();
-    dispatch(addMovieCategories(json.genres));  // Dispatch to store
+    dispatch(addMovieCategories(json.genres));  
   };
 
   useEffect(() => {
     if (!movieCategories || movieCategories.length === 0) {
-      getMovieCategories();  // Fetch data only if not already in store
+      getMovieCategories();  
     }
-  }, [movieCategories, dispatch]);  // Trigger if movieCategories are empty or not available
+  }, []);  
 };
 
 export default useMovieCategories;

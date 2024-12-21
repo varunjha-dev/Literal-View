@@ -6,8 +6,8 @@ import useMoviesByCategories from "../hooks/useMoviesByCategories";
 const SecondaryContainer = () => {
   useMovieCategories();  // Fetch categories from the API
   useMoviesByCategories();
-  const categories = useSelector((store) => store.movies.movieCategories);  // Get categories from Redux
-  const moviesByCategory = useMoviesByCategories();  // Get movies for each category from the hook
+  const categories = useSelector((store) => store.movies.movieCategories);  
+  const moviesByCategory = useMoviesByCategories();  
 
   // Slice top 10 categories for display
   const topCategories = categories?.slice(0, 10);
@@ -16,14 +16,14 @@ const SecondaryContainer = () => {
     <div className="bg-black">
       <div className="mt-0 md:-mt- pl-4 md:pl-12 relative z-20 overflow-hidden">
         {topCategories?.map((category) => {
-          // Get the movies for this category from the store
+          
           const categoryMovies = moviesByCategory[category.id];
 
           return (
             <MovieList
               key={category.id}
               title={category.name}
-              movies={categoryMovies} // Pass the movies to MovieList
+              movies={categoryMovies} 
             />
           );
         })}

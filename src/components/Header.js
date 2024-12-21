@@ -22,7 +22,7 @@ const Header = () => {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
-        // User is signed in, see docs for a list of available properties
+        // User is signed in
 
         const { uid, email, displayName, photoURL } = user;
         dispatch(
@@ -40,7 +40,7 @@ const Header = () => {
         navigate("/");
       }
     });
-    // Unsiubscribe when component unmounts
+    // Unsubscribe when component unmounts
     return () => unsubscribe();
   }, []);
   //*Empty array means "run once, after the initial render."

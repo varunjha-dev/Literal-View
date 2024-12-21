@@ -1,11 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  nowPlayingMovies: null,       // Movies currently playing
-  movieCategories: [],          // Categories like Action, Comedy, etc.
-  trailerVideo: null,           // Stores trailer video for playback
-  moviesByCategory: {},         // Stores movies grouped by category ID
-  selectedMovie: null,          // Tracks the movie selected by the user
+  nowPlayingMovies: null,       
+  movieCategories: [],          
+  trailerVideo: null,         
+  moviesByCategory: {},       
+  selectedMovie: null,         
 };
 
 const moviesSlice = createSlice({
@@ -23,13 +23,13 @@ const moviesSlice = createSlice({
       state.moviesByCategory[categoryId] = movies;
     },
     setSelectedMovie: (state, action) => {
-      state.selectedMovie = action.payload; // Store selected movie ID or details
+      state.selectedMovie = action.payload; 
     },
     addTrailerVideo: (state, action) => {
-      state.trailerVideo = action.payload; // Stores trailer video URL or details
+      state.trailerVideo = action.payload; 
     },
     clearTrailerVideo: (state) => {
-      state.trailerVideo = null; // Resets trailer state
+      state.trailerVideo = null;
     },
   },
 });
@@ -38,7 +38,7 @@ export const {
   addNowPlayingMovies,
   addMovieCategories,
   addMoviesByCategory,
-  setSelectedMovie, // New feature
+  setSelectedMovie, 
   addTrailerVideo,
   clearTrailerVideo,
 } = moviesSlice.actions;

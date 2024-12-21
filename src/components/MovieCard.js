@@ -6,10 +6,9 @@ const MovieCard = ({ posterPath, originalTitle }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleClick = async () => {
-    // Encode the movie title for URL
+   
     const searchQuery = encodeURIComponent(`${originalTitle} trailer`);
 
-    // Use the defined API path to search on YouTube
     const youtubeSearchUrl = API_PATHS.searchOnYoutube(searchQuery);
 
     try {
@@ -18,7 +17,6 @@ const MovieCard = ({ posterPath, originalTitle }) => {
       const data = await response.json();
 
       if (data.items && data.items.length > 0) {
-        // Get the first video's ID
         const videoId = data.items[0].id.videoId;
         setVideoId(videoId);
         setIsModalOpen(true); // Open the modal
@@ -39,7 +37,7 @@ const MovieCard = ({ posterPath, originalTitle }) => {
 
   return (
     <div>
-      {/* Movie Card */}
+     
       <div className="w-36 md:w-48 pr-4 cursor-pointer" onClick={handleClick}>
         <img alt="Movie Card" src={IMG_CDN_URL + posterPath} />
       </div>

@@ -16,7 +16,6 @@ const useMoviesByCategories = () => {
       API_OPTIONS
     );
     const data = await response.json();
-    // Dispatch the action to add movies to the Redux store
     dispatch(addMoviesByCategory({ categoryId, movies: data.results }));
   };
 
@@ -24,7 +23,6 @@ const useMoviesByCategories = () => {
   useEffect(() => {
     if (categories?.length > 0) {
       categories.slice(0, 10).forEach((category) => {
-        // Fetch movies only if not already fetched for the category
         if (!moviesByCategory[category.id]) {
           getMoviesByCategory(category.id);
         }

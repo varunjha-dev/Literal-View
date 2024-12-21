@@ -18,12 +18,12 @@ const MainContainer = () => {
         do {
           movie = movies[Math.floor(Math.random() * movies.length)];
           count++;
-        } while (count < 12); // Stop after 12 iterations
+        } while (count < 12); // Stop after 12 iterations, This is done by me because picking random movie from the list cause some sort of starvation in UI as it becomes visible of random movie picking which degrades UX too
         setRandomMovie(movie);
         setIterations(count);
       };
 
-      getRandomMovie(); // Get random movie when movies are loaded
+      getRandomMovie(); 
     }
   }, [movies]);
 
